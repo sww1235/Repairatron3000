@@ -1,0 +1,38 @@
+updating minecraft forge, episode 7 letsmodreboot
+
+starting mcforge version=="1.7.10-10.13.0.1208"
+
+this mod will require mcforge, thermal exapsion or MFR,
+
+this mod is designed to implement vanilla's crafting table repair of tools/armor in a new machine called the Repairatron3000.
+it will accept any vanila item that can be damaged, such as a tool, weapon, armor, etc via pipes/gui and record the duriblity of the item.
+it will add this duribility to an internal counter, and when that counter = 90%(i think the vanilla repair bonus is 10%) of the total item durability
+it will eject a fully repaired tool. Config option for if you want it to be like vanilla where if you add 2 slightly damaged items together, you will wind up
+with only one and loose the excess durability, meaning the counter gets reset after every ejection operaiton, or that the counter does not get reset
+you may wind up with 1.5 tools worth of durability in the buffer. example is showing in psudo code the two options
+
+//first option
+buffer= 0
+accept tool
+record durability of tool
+record total durability fo tool
+delete tool
+add tool durability to buffer
+when buffer>= total tool durability*.9 then eject new tool and set buffer=0
+
+//second option
+buffer= 0
+accept tool
+record durability of tool
+record total durability fo tool
+delete tool
+add tool durability to buffer
+when buffer>= total tool durability*.9 then eject new tool and subtract total tool durability from buffer
+
+The machine can only be used for one type of item and material at one (ie, it cannot be used to repair diamond pickaxes
+ and gold pickaxes at the same time or it cannot have more than one type of material in its buffer at once) this is to
+ hopefully add a bit of balance to the mod.
+
+ the machine will be designed to be powered off of RF or MJ. maybe EU on request, but add a constant energy drain for EU so RF is more desirable
+
+ the planned recipe will be shaped and will consist of storage blocks of the following types, coal, iron, lapis, redstone, gold, diamond, emerald, tin, and a machine frame from either MFR or Thermal expansion.
