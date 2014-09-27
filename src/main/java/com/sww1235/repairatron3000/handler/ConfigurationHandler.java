@@ -4,7 +4,6 @@ import com.sww1235.repairatron3000.reference.Reference;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
-
 import java.io.File;
 
 public class ConfigurationHandler
